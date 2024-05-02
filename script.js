@@ -21,6 +21,7 @@ function addProduct() {
         price,
         description
     });
+    showProducts();
     updateProductList();
     saveProducts();
     clearForm();
