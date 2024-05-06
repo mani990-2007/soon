@@ -19,9 +19,20 @@
             <input type="text" id="name" placeholder="نام محصول"><br>
             <input type="number" id="price" placeholder="قیمت محصول"><br>
             <input type="text" id="description" placeholder="توضیحات محصول (اختیاری)"><br>
+            <input type="file" id="image" accept="image/*" onchange="previewImage()">
+            <img id="preview" src="#" alt="عکس محصول" style="display: none; max-width: 200px; max-height: 200px;"><br>
+            <div class="radio-buttons">
+                <input type="radio" id="available" name="availability" value="true">
+                <label for="available" class="radio-button">موجود</label>
+                <input type="radio" id="unavailable" name="availability" value="false">
+                <label for="unavailable" class="radio-button">ناموجود</label><br>
+            </div>
             <button id="add-product-button" onclick="addProduct()">ذخیره محصول</button>
-            <button id="edit-product-button" style="display:none;" onclick="updateProduct()">ویرایش محصول</button>
-            <button id="cancel-edit-button" style="display:none;" onclick="cancelEdit()">لغو</button>
+            
+            <div id="edit-cancel-buttons" style="margin-top: 10px;">
+                <button id="edit-product-button" style="display:none;" onclick="updateProduct()">ویرایش محصول</button>
+                <button id="cancel-edit-button" style="display:none;" onclick="cancelEdit()">لغو</button>
+            </div>
         </div>
         <div id="product-list" class="fade-in" style="display:none;">
             <h2>لیست محصولات</h2>
@@ -32,10 +43,12 @@
                         <th>قیمت</th>
                         <th>توضیحات</th>
                         <th>نام</th>
+                        <th>موجودی</th>
+                        <th>تصویر</th>
                     </tr>
                 </thead>
                 <tbody id="product-table-body">
-                    <!-- ردیف‌های جدول دینامیک اینجا اضافه می‌شوند -->
+                    
                 </tbody>
             </table>
         </div>
@@ -44,3 +57,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
